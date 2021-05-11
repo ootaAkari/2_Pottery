@@ -1,0 +1,96 @@
+// フォントベース
+@mixin font-base($size: 1rem, $weight: 400, $space: 0.028rem) {
+    font-family: 'Noto Serif JP', serif;
+    font-size: $size;
+    font-weight: $weight;
+    letter-spacing: $space;
+    color: $black;
+}
+
+// フォント ヘッダーナビゲーション
+@mixin nav-font {
+    @include font-base(1.35rem, 600);
+}
+
+// フォント 縦書き見出し
+@mixin ttl-font {
+    @include font-base(1.75rem, 600);
+    writing-mode: vertical-rl;
+}
+
+// フォント 本文
+@mixin txt-font {
+    @include font-base(1rem, 300, 0.05rem);
+    line-height: 2;
+}
+
+//フォント planモーダルウィンドウ内タイトル
+@mixin modal-ttl-font {
+    @include font-base(2.1875rem);
+    margin-bottom: 110px;
+}
+
+//フォント planモーダルウィンドウ内 料金・作業時間
+@mixin modal-info-font {
+    @include font-base(1.125rem);
+    margin-bottom: 30px;
+}
+
+//フォント access内本文 
+@mixin access-font {
+    @include font-base(0.9rem);
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+
+// background logo image
+@mixin studio-logo {
+    background: url(../images/icon/studio-logo.png) center center / cover;
+}
+
+// snsアイコン
+@mixin instagram-icon($icon: url(../images/icon/instagram-icon.svg)) {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: $icon center center / cover;
+}
+
+@mixin twitter-icon($icon: url(../images/icon/twitter-icon.svg)) {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: $icon center center / cover;
+}
+
+@mixin facebook-icon($icon: url(../images/icon/facebook-icon.svg)) {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: $icon center center / cover;
+}
+
+// ヘッダーハンバーガーボタン
+@mixin btn ($translate: 0) {
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: $black;
+    position: absolute;
+    left: 0;
+    transform: translateY($translate);
+    transition: .5s;
+}
+
+//hover 
+@mixin hover-before {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        background: $black-b;
+        transition: .7s;
+    }
+}

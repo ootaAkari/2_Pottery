@@ -1,0 +1,132 @@
+.header {
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+
+    // 全画面メニュー
+    &__wrapper {
+        width: 100%;
+        height: 100vh;
+        background-color: $gray-opc;
+        position: absolute;
+        top: 0;
+        transform: translateX(100%);
+        transition: 1s;
+    }
+
+    &__container {
+        width: 25%;
+        padding: 7% 7.8%;
+        margin: 5% auto;
+        background-color: #fff;
+    }
+}
+
+// 全画面メニューナビゲーション
+.gnav {
+    &__nav {
+        @include nav-font;
+    }
+
+    &__list {
+        padding-bottom: 30%;
+
+        &:last-of-type {
+            padding-bottom: 55%;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        text-decoration: none;
+        color: $black;
+        @include hover-before;
+        &::before {
+            width: 100%;
+            height: 1px;
+            bottom: -10px;
+            opacity: 0;
+        }
+
+        &:hover {
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+// SNSアイコン
+.sns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style-type: none;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        @include hover-before;
+        &::before {
+            width: 120%;
+            height: 120%;
+            border-radius: 50%;
+            opacity: 0;
+        }
+        &:hover {
+            &::before {
+                opacity: .2;
+            }
+        }
+    }
+
+    &__link01 {
+        @include instagram-icon;
+    }
+
+    &__link02 {
+        @include twitter-icon;
+    }
+
+    &__link03 {
+        @include facebook-icon;
+    }
+}
+
+
+// ハンバーガーメニューボタン
+.btn {
+    position: absolute;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+    top: 20px;
+    right: 30px;
+
+    &__wrapper {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__top {
+        @include btn(-19px);
+    }
+
+    &__middle {
+        @include btn();
+    }
+
+    &__bottom {
+        @include btn(19px);
+    }
+
+}

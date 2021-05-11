@@ -1,0 +1,355 @@
+// 背景色
+.wrapper {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        background-color: $gray;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+}
+
+.mv {
+    position: relative;
+    margin-bottom: 200px;
+
+    // TOPロゴ
+    &__logo {
+        padding-bottom: 180px;
+        text-align: center;
+    }
+
+    // TOPテキスト
+    &__textarea {
+        position: absolute;
+        top: 280px;
+        left: 170px;
+        z-index: 5;
+    }
+}
+
+// about
+.about {
+    position: relative;
+    height: 70vh;
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        padding: 80px 70px 90px 60px;
+        right: 330px;
+        top: -260px;
+        z-index: 5;
+        background-color: #fff;
+    }
+
+    &__pic {
+        margin-bottom: 60px;
+        margin-left: 10px;
+    }
+
+    &__ttl {
+        @include ttl-font;
+    }
+
+    &__txt {
+        @include txt-font;
+    }
+}
+
+// ギャラリースワイパー
+.gallery {
+    &__swiper {
+        margin-bottom: 400px;
+    }
+
+    &__slide {
+        width: 35%;
+    }
+
+    &__img {
+        width: 100%;
+    }
+
+    &__ttl {
+        position: relative;
+        display: inline-block;
+
+        &::after {
+            content: "gallery";
+            position: absolute;
+            display: inline-block;
+            @include ttl-font;
+            top: 0;
+            right: -40px;
+        }
+    }
+}
+
+
+
+// plan
+.plan {
+    margin-bottom: 900px;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        background: url(../images/plan/plan-back.jpg) center center / cover;
+        width: 1390px;
+        height: 600px;
+        left: 0;
+        bottom: -400px;
+    }
+
+    &__wrapper {
+        width: 1520px;
+        height: 780px;
+        margin: 0 auto;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    &__ttl {
+        position: absolute;
+        top: -25%;
+        left: 5%;
+    }
+
+    &__content {
+        width: 70%;
+        // margin: 0 auto;
+        padding: 200px 7% 0;
+    }
+
+    &__txt {
+        margin-bottom: 85px;
+        @include txt-font;
+    }
+
+    // plan内menu3つ横並び
+    &__menu {
+        position: relative;
+    }
+}
+
+// plan内menu
+.menu {
+    &__ttl {
+        position: absolute;
+        top: 0;
+        right: -50px;
+        @include ttl-font;
+    }
+
+    &__container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__list {
+        padding: 90px 100px;
+        margin-bottom: 100px;
+        border: solid 1px $black;
+        transition: .7s;
+        cursor: pointer;
+
+        &:hover {
+            .menu__txt::before {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__txt {
+        text-align: center;
+        line-height: 1.6;
+        @include font-base;
+        transition: .7s;
+        @include hover-before;
+
+        &::before {
+            width: 120%;
+            height: 1px;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            opacity: 0;
+        }
+    }
+}
+
+// plan内menuクリック modal window
+.modal {
+    display: none;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background-color: rgba(255, 255, 255, 0.7);
+
+    &__wrapper {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // 左 写真
+    &__pic {
+        display: inline-block;
+    }
+
+    // 右 説明本文
+    &__right {
+        width: 880px;
+        height: 860px;
+        padding: 110px 100px;
+        background-color: #fff;
+    }
+
+    &__ttl {
+        @include modal-ttl-font;
+    }
+
+    // 料金・作業時間 折り返し
+    &__infoarea {
+        width: 92%;
+        margin: 0 auto 40px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        width: 20%;
+        @include modal-info-font;
+    }
+
+    &__info {
+        width: 80%;
+        @include modal-info-font;
+    }
+
+    &__small {
+        @include font-base;
+    }
+
+    // 説明文
+    &__txtarea {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    &__txt {
+        @include txt-font;
+        margin-bottom: 30px;
+    }
+}
+
+// access
+.access {
+    width: 100%;
+    margin-bottom: 100px;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1390px;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: $dark-gray;
+    }
+
+    &__wrapper {
+        width: 1520px;
+        height: 1180px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        &::before {
+            content: "";
+        }
+    }
+
+    &__ttl {
+        position: absolute;
+        top: 0;
+        left: 60px;
+        @include ttl-font;
+    }
+
+    // 内容部分
+    &__main {
+        width: 1420px;
+    }
+
+    //内容部分の上ボックス 
+    &__top {
+        margin-bottom: 80px;
+        padding: 0 40px;
+        height: 590px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff;
+    }
+
+    &__left {
+        width: 295px;
+        margin: 0 auto;
+    }
+
+    &__logo {
+        @include studio-logo;
+        width: 140px;
+        height: 195px;
+        margin: 0 auto 40px;
+    }
+
+    &__txtarea {
+        @include access-font;
+    }
+
+    // 電話・メール折り返し
+    &__contact {
+        @include access-font;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    // dt
+    &__tell,
+    &__mail {
+        width: 20%;
+    }
+
+    // dd
+    &__number,
+    &__mailad {
+        width: 80%;
+    }
+
+    &__guide {
+        @include access-font;
+        margin-bottom: 0;
+    }
+}
