@@ -19,6 +19,11 @@
     position: relative;
     margin-bottom: 200px;
 
+    //mvの右側空白修正
+    &__slide img {
+        width: 100%;
+    }
+
     // TOPロゴ
     &__logo {
         padding-bottom: 180px;
